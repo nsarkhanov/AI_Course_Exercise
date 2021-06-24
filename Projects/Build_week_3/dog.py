@@ -52,8 +52,11 @@ while True:
         # else:
         cv2.ellipse(img,bottum_center,(len_bottom,int(len_bottom*0.6)),angle_bottom,0,180,(255,255,0),-1)
         cv2.ellipse(img,top_center,(len_top,int(len_top*0.35)),angle_top,0,360,(255,255,0),-1)
-        cv2.ellipse(img,head_top,(int(len_top*(2/3)),int(len_top*0.6)),angle_top+10,180,360,(255,255,0),-1)
-        cv2.ellipse(img,(head_top[0]-20,head_top[1]-90),(int(len_top*0.2),int(len_top*0.35)),angle_top+10,0,360,(255,0,0),-1)
+        cv2.ellipse(img,head_top,(int(len_top*(2/3)),int(len_top*0.6)),angle_top+5,180,360,(255,255,0),-1)
+
+
+
+        #cv2.ellipse(img,(head_top[0]+20,head_top[1]-90),(int(len_top*0.2),int(len_top*0.35)),angle_top+10,0,360,(255,0,0),-1)
 
 
 
