@@ -20,15 +20,17 @@ while True:
     if len(list)!=0:
         x0,y0=list[0][1],list[0][2]
         x4,y4=list[4][1],list[4][2]
+        x7,y7=list[7][1],list[7][2]
         x8,y8=list[8][1],list[8][2]
+        x10,y10=list[10][1],list[10][2]
         x17,y17=list[17][1],list[17][2]
         bottum_center=(x0+x4)//2,(y0+y4)//2-20
         top_center=(x0+x8)//2,(y0+y8)//2-20
         fish_center=(bottum_center[0]+top_center[0])//2+20,(bottum_center[1]+top_center[1])//2-5
-        slope_bottom = (y4 - y0) / (x4 - x0)
+        slope_bottom = (y4 - y0) / (x4 - x0+1)
         angle_bottom = np.arctan(slope_bottom)*180/np.pi
         angle_bottom=int(angle_bottom)
-        slope_top= (y8 - y0) / (x8 - x0)
+        slope_top= (y8 - y0) / (x8 - x0+1)
         angle_top = np.arctan(slope_top)*180/np.pi
         angle_top=int(angle_top)
         len_bottom=int(math.hypot(x4 - x0,y4 - y0)*0.6)
@@ -59,6 +61,9 @@ while True:
         ##############################################################################################################
         # rabbit model
         cv2.circle(img,(x4,y4),12,(0,0,0),cv2.FILLED)
+        cv2.circle(img,(x7,y7),12,(0,0,0),cv2.FILLED)
+        cv2.circle(img,(x10,y10),12,(0,0,0),cv2.FILLED)
+
 
 
     cTime=time.time()
