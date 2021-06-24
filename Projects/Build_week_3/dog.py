@@ -58,7 +58,8 @@ while True:
         # cv2.line(img,(list[4][1]-int(list[4][1]*0.1),list[4][2]-int(list[4][2]*0.1)),(list[4][1]+int(list[4][1]*0.1),list[4][2]-int(list[4][2]*0.1)),(255,255,255),4)
         ##############################################################################################################
         # rabbit model
-        
+        cv2.circle(img,(x4,y4),12,(0,0,0),cv2.FILLED)
+
 
     cTime=time.time()
     fps=1/(cTime-pTime)
