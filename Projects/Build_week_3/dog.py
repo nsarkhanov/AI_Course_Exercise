@@ -30,6 +30,7 @@ while True:
         # cv2.circle(img,(x17,y17),8,(255,0,0),cv2.FILLED)
         bottum_center=(x0+x4)//2,(y0+y4)//2-20
         top_center=(x0+x8)//2,(y0+y8)//2-20
+        fish_center=(int()(bottum_center[0]+top_center[0])//2)*1.1),(bottum_center[1]+top_center[1])//2
 
         slope_bottom = (y4 - y0) / (x4 - x0)
         angle_bottom = np.arctan(slope_bottom)*180/np.pi
@@ -65,7 +66,7 @@ while True:
         #cv2.circle(img,top_center,50,(255,0,0),-1)
         # cv2.line(img,(x0,y0),(x4-20,y4-20),(255,0,0),3)
         # cv2.line(img,(x0,y0),(x8-20,y8-20),(255,0,0),3)
-        cv2.ellipse(img,head_top,(int(len_top*1.4),int(len_top*0.5)),angle_top+5,0,360,fish_color,-1)
+        cv2.ellipse(img,fish_center,(int(len_top*1.2),int(len_top*0.5)),angle_top+5,0,360,fish_color,-1)
 
     cTime=time.time()
     fps=1/(cTime-pTime)
