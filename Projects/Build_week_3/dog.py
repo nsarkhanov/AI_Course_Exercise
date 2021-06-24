@@ -55,6 +55,7 @@ while True:
         cv2.ellipse(img,head_top,(int(len_top*(2/3)),int(len_top*0.6)),angle_top+10,180,360,(255,255,0),-1)
 
         cv2.circle(img,eye,12,(0,0,0),cv2.FILLED)
+        cv2.circle(img,eye,6,(255,255,255),cv2.FILLED)
         # print(len_bottom)
         #cv2.circle(img,top_center,50,(255,0,0),-1)
         # cv2.line(img,(x0,y0),(x4-20,y4-20),(255,0,0),3)
