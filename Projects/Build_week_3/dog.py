@@ -56,7 +56,7 @@ while True:
 
 
 
-        cv2.ellipse(img,(head_top[0]+40,head_top[1]-int(len_top*(2/3))),(int(len_top*0.25),int(len_top*0.65)),angle_top+5,180,360,(255,255,0),-1)
+        cv2.ellipse(img,(head_top[0]+40,head_top[1]-int(len_top*(2/5))),(int(len_top*0.25),int(len_top*0.65)),angle_top+5,180,360,(255,255,0),-1)
 
 
 
