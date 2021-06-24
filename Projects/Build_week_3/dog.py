@@ -52,7 +52,7 @@ while True:
         # else:
 
         # creating dog
-        dog_head_color=(108,121,159)
+        dog_head_color=(58,96,116)
 
         cv2.ellipse(img,bottum_center,(len_bottom,int(len_bottom*0.6)),angle_bottom,0,180,dog_head_color,-1)
         cv2.ellipse(img,top_center,(len_top,int(len_top*0.35)),angle_top,0,360,dog_head_color,-1)
