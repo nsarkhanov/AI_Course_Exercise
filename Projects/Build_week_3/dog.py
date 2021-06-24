@@ -61,17 +61,21 @@ while True:
         ##############################################################################################################
         # rabbit model
         # cv2.circle(img,(x4,y4),12,(0,0,0),cv2.FILLED)
-        cv2.circle(img,(x7,y7),12,(0,0,0),cv2.FILLED)
-        cv2.circle(img,(x10,y10),12,(0,0,0),cv2.FILLED)
+        # cv2.circle(img,(x7,y7),12,(0,0,0),cv2.FILLED)
+        # cv2.circle(img,(x10,y10),12,(0,0,0),cv2.FILLED)
         # cv2.circle(img,(x4,y4),20,(0,255,0),cv2.FILLED)
         cv2.circle(img,(x4,y4+40),int(len_top*0.7),fish_color,cv2.FILLED)
         cv2.circle(img,(x4,y4+int(y4*0.2)),20,(255,255,255),cv2.FILLED)
         cv2.ellipse(img,(x7,y7),(int(len_top*0.2),int(len_top*0.7)),angle_top+95,0,360,fish_color,-1)
         cv2.ellipse(img,(x10+10,y10),(int(len_top*0.2),int(len_top*0.7)),angle_top+105,0,360,fish_color,-1)
-        cv2.circle(img,(x4-int(x4*0.1),y4+int(y4*0.1)),10,(255,255,255),cv2.FILLED)
+        cv2.circle(img,(x4,y4+40),int(len_top*0.7),fish_color,cv2.FILLED)
+        cv2.circle(img,(x4,y4+int(y4*0.2)),20,(255,255,255),cv2.FILLED)
+
         cv2.circle(img,(x4-int(x4*0.1),y4+int(y4*0.1)),15,(255,0,0),cv2.FILLED)
-        cv2.circle(img,(x4+int(x4*0.1),y4+int(y4*0.1)),10,(255,255,255),cv2.FILLED)
+        cv2.circle(img,(x4-int(x4*0.1),y4+int(y4*0.1)),10,(255,255,255),cv2.FILLED)
+
         cv2.circle(img,(x4+int(x4*0.1),y4+int(y4*0.1)),15,(255,0,0),cv2.FILLED)
+        cv2.circle(img,(x4+int(x4*0.1),y4+int(y4*0.1)),10,(255,255,255),cv2.FILLED)
 
 
 
