@@ -3,7 +3,7 @@ import numpy as np
 import mediapipe as mp
 
 
-img = np.ones(shape=[512, 512, 3], dtype=np.uint8)
+
 class Draw():
     def __init__(self,hight, width):
         self.width=width
@@ -13,11 +13,12 @@ class Draw():
         if animal_name=='Dog':
             pass
 
+img = np.zeros([512,512,3],dtype=np.uint8)
+img.fill(255)
 
-
-color=(33,67,101)
+color=(128,84,231)
 center_coordinate=img.shape[0]//2,img.shape[1]//2
-head_size=20
+head_size=100
 
 #cv2.ellipse(img,bottum_center,(len_bottom,int(len_bottom*0.6)),angle_bottom,0,180,dog_head_color,-1)
 #cv2.ellipse(img,top_center,(len_top,int(len_top*0.35)),angle_top,0,360,dog_head_color,-1)
