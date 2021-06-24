@@ -63,16 +63,16 @@ while True:
         # #eyes
         # cv2.circle(img,eye,12,(0,0,0),cv2.FILLED)
         # cv2.circle(img,eye,6,(255,255,255),cv2.FILLED)
-        # # print(len_bottom)
-        #cv2.circle(img,top_center,50,(255,0,0),-1)
-        # cv2.line(img,(x0,y0),(x4-20,y4-20),(255,0,0),3)
-        # cv2.line(img,(x0,y0),(x8-20,y8-20),(255,0,0),3)
+        #
+        #
+        #
+
         cv2.ellipse(img,fish_center,(int(len_top*1.35),int(len_top*0.6)),angle_top+5,0,360,fish_color,-1)
         cv2.circle(img,fish_eye,12,(0,0,0),cv2.FILLED)
         cv2.circle(img,fish_eye,6,(255,255,255),cv2.FILLED)
-
+        #
         tail_center=fish_center[0]+int(len_top*1.35//2),fish_center[1]
-        print (tail_center)
+        # # print (tail_center)
 
     cTime=time.time()
     fps=1/(cTime-pTime)
