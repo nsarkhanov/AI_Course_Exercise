@@ -60,9 +60,11 @@ while True:
         # cv2.line(img,(list[4][1]-int(list[4][1]*0.1),list[4][2]-int(list[4][2]*0.1)),(list[4][1]+int(list[4][1]*0.1),list[4][2]-int(list[4][2]*0.1)),(255,255,255),4)
         ##############################################################################################################
         # rabbit model
-        cv2.circle(img,(x4,y4),12,(0,0,0),cv2.FILLED)
+        # cv2.circle(img,(x4,y4),12,(0,0,0),cv2.FILLED)
         cv2.circle(img,(x7,y7),12,(0,0,0),cv2.FILLED)
         cv2.circle(img,(x10,y10),12,(0,0,0),cv2.FILLED)
+        cv2.circle(img,(x4,y4),20,(0,255,0),cv2.FILLED)
+        cv2.circle(img,(x4,y4),int(len_top*0.4),(0,255,0),cv2.FILLED)
 
 
 
