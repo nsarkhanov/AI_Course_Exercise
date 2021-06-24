@@ -46,7 +46,7 @@ while True:
         cv2.circle(img,top_center,12,(255,0,0),cv2.FILLED)
         if bottum_center[1]-top_center[1]<50:
             cv2.ellipse(img,bottum_center,(len_bottom,int(len_bottom*0.4)),angle_bottom,10,190,(255,255,0),-1)
-            cv2.ellipse(img,top_center,(len_top,int(len_top*0.35)),angle_top,180,360,(255,255,0),-1)
+            cv2.ellipse(img,top_center,(len_top,int(len_top*0.35)),angle_top,170,350,(255,255,0),-1)
 
         else:
             cv2.ellipse(img,bottum_center,(len_bottom,int(len_bottom*0.4)),angle_bottom,0,360,(255,255,0),-1)
