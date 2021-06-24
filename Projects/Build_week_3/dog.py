@@ -18,20 +18,13 @@ while True:
     img=detector.findHands(frame)
     list=detector.findPosition(img,draw=False)
     if len(list)!=0:
-
         x0,y0=list[0][1],list[0][2]
         x4,y4=list[4][1],list[4][2]
         x8,y8=list[8][1],list[8][2]
         x17,y17=list[17][1],list[17][2]
-
-        # cv2.circle(img,(x0,y0),8,(255,0,0),cv2.FILLED)
-        # cv2.circle(img,(x4,y4),8,(255,0,0),cv2.FILLED)
-        # cv2.circle(img,(x8,y8),8,(255,0,0),cv2.FILLED)
-        # cv2.circle(img,(x17,y17),8,(255,0,0),cv2.FILLED)
         bottum_center=(x0+x4)//2,(y0+y4)//2-20
         top_center=(x0+x8)//2,(y0+y8)//2-20
         fish_center=(bottum_center[0]+top_center[0])//2+20,(bottum_center[1]+top_center[1])//2-5
-
         slope_bottom = (y4 - y0) / (x4 - x0)
         angle_bottom = np.arctan(slope_bottom)*180/np.pi
         angle_bottom=int(angle_bottom)
@@ -42,39 +35,30 @@ while True:
         len_top=int(math.hypot(x8 - x0,y8 - y0)*0.65)
         eye=top_center[0],top_center[1]-30
         head_top=top_center[0]+30,top_center[1]-5
-        #print(angle_top,angle_bottom)
-        # cv2.circle(img,bottum_center,12,(255,0,0),cv2.FILLED)
-        # cv2.circle(img,top_center,12,(255,0,0),cv2.FILLED)
-
-        # if bottum_center[1]-top_center[1]<50:
-        #     cv2.ellipse(img,bottum_center,(len_bottom,int(len_bottom*0.4)),angle_bottom,10,190,(255,255,0),-1)
-        #     cv2.ellipse(img,top_center,(len_top,int(len_top*0.35)),angle_top,170,350,(255,255,0),-1)
-        #
-        # else:
-
+        ###################################################################################################
         # creating dog
-        dog_head_color=(33,67,101)
-        fish_color=(255,255,0)
-        fish_eye=x8,y8-20
-        cv2.ellipse(img,bottum_center,(len_bottom,int(len_bottom*0.6)),angle_bottom,0,180,dog_head_color,-1)
-        cv2.ellipse(img,top_center,(len_top,int(len_top*0.35)),angle_top,0,360,dog_head_color,-1)
-        cv2.ellipse(img,head_top,(int(len_top*(2/3)),int(len_top*0.6)),angle_top+5,180,360,dog_head_color,-1)
-        cv2.ellipse(img,(head_top[0]+40,head_top[1]-int(len_top*(2/5))),(int(len_top*0.25),int(len_top*0.65)),angle_top,180,360,dog_head_color,-1)
-        #eyes
-        cv2.circle(img,eye,12,(0,0,0),cv2.FILLED)
-        cv2.circle(img,eye,6,(255,255,255),cv2.FILLED)
-
+        # dog_head_color=(33,67,101)
+        # cv2.ellipse(img,bottum_center,(len_bottom,int(len_bottom*0.6)),angle_bottom,0,180,dog_head_color,-1)
+        # cv2.ellipse(img,top_center,(len_top,int(len_top*0.35)),angle_top,0,360,dog_head_color,-1)
+        # cv2.ellipse(img,head_top,(int(len_top*(2/3)),int(len_top*0.6)),angle_top+5,180,360,dog_head_color,-1)
+        # cv2.ellipse(img,(head_top[0]+40,head_top[1]-int(len_top*(2/5))),(int(len_top*0.25),int(len_top*0.65)),angle_top,180,360,dog_head_color,-1)
+        # #eyes
+        # cv2.circle(img,eye,12,(0,0,0),cv2.FILLED)
+        # cv2.circle(img,eye,6,(255,255,255),cv2.FILLED)
+        # ##############################################################################################################
+        # # fish model
+        # tail_center=x0+int(len_bottom*0.75),y0
+        # fish_eye=x8,y8-20
+        # fish_color=(255,255,0)
+        # cv2.ellipse(img,(fish_center[0],fish_center[1]+10),(int(len_top*1.35),int(len_top*0.6)),angle_top+5,0,360,fish_color,-1)
+        # cv2.ellipse(img,tail_center,(int(len_top*0.25),int(len_top*0.65)),angle_top+60,0,360,fish_color,-1)
+        # cv2.ellipse(img,tail_center,(int(len_top*0.25),int(len_top*0.65)),angle_top-60,0,360,fish_color,-1)
+        # cv2.circle(img,fish_eye,12,(0,0,0),cv2.FILLED)
+        # cv2.circle(img,fish_eye,6,(255,255,255),cv2.FILLED)
+        # cv2.line(img,(list[4][1]-int(list[4][1]*0.1),list[4][2]-int(list[4][2]*0.1)),(list[4][1]+int(list[4][1]*0.1),list[4][2]-int(list[4][2]*0.1)),(255,255,255),4)
         ##############################################################################################################
-        # fish model
-        tail_center=x0+int(len_bottom*0.75),y0
-        cv2.ellipse(img,(fish_center[0],fish_center[1]+10),(int(len_top*1.35),int(len_top*0.6)),angle_top+5,0,360,fish_color,-1)
-        cv2.ellipse(img,tail_center,(int(len_top*0.25),int(len_top*0.65)),angle_top+60,0,360,fish_color,-1)
-        cv2.ellipse(img,tail_center,(int(len_top*0.25),int(len_top*0.65)),angle_top-60,0,360,fish_color,-1)
-        cv2.circle(img,fish_eye,12,(0,0,0),cv2.FILLED)
-        cv2.circle(img,fish_eye,6,(255,255,255),cv2.FILLED)
-        cv2.line(img,(list[4][1]-int(list[4][1]*0.1),list[4][2]-int(list[4][2]*0.1)),(list[4][1]+int(list[4][1]*0.1),list[4][2]-int(list[4][2]*0.1)),(255,255,255),4)
-        ##############################################################################################################
-        # # print (tail_center)
+        # rabbit model
+        
 
     cTime=time.time()
     fps=1/(cTime-pTime)
