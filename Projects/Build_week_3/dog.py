@@ -29,7 +29,7 @@ while True:
         # cv2.circle(img,(x8,y8),8,(255,0,0),cv2.FILLED)
         # cv2.circle(img,(x17,y17),8,(255,0,0),cv2.FILLED)
         bottum_center=(x0+x4)//2,(y0+y4)//2-20
-        top_center=(x0+x8)//2,(y0+y8)//2-15
+        top_center=(x0+x8)//2,(y0+y8)//2-20
 
         slope_bottom = (y4 - y0) / (x4 - x0)
         angle_bottom = np.arctan(slope_bottom)*180/np.pi
@@ -38,12 +38,13 @@ while True:
         angle_top = np.arctan(slope_top)*180/np.pi
         angle_top=int(angle_top)
         len_bottom=int(math.hypot(x4 - x0,y4 - y0)*0.6)
-        len_top=int(math.hypot(x8 - x0,y8 - y0)*0.6)
-
+        len_top=int(math.hypot(x8 - x0,y8 - y0)*0.65)
+        eye=top_center[0],top_center[1]-30
 
         #print(angle_top,angle_bottom)
-        cv2.circle(img,bottum_center,12,(255,0,0),cv2.FILLED)
-        cv2.circle(img,top_center,12,(255,0,0),cv2.FILLED)
+        # cv2.circle(img,bottum_center,12,(255,0,0),cv2.FILLED)
+        # cv2.circle(img,top_center,12,(255,0,0),cv2.FILLED)
+
         # if bottum_center[1]-top_center[1]<50:
         #     cv2.ellipse(img,bottum_center,(len_bottom,int(len_bottom*0.4)),angle_bottom,10,190,(255,255,0),-1)
         #     cv2.ellipse(img,top_center,(len_top,int(len_top*0.35)),angle_top,170,350,(255,255,0),-1)
@@ -51,7 +52,7 @@ while True:
         # else:
         cv2.ellipse(img,bottum_center,(len_bottom,int(len_bottom*0.6)),angle_bottom,0,180,(255,255,0),-1)
         cv2.ellipse(img,top_center,(len_top,int(len_top*0.35)),angle_top,0,360,(255,255,0),-1)
-
+        cv2.circle(img,eye,12,(0,0,0),cv2.FILLED)
         # print(len_bottom)
         #cv2.circle(img,top_center,50,(255,0,0),-1)
         # cv2.line(img,(x0,y0),(x4-20,y4-20),(255,0,0),3)
