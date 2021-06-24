@@ -56,13 +56,14 @@ while True:
 
 
 
-        cv2.ellipse(img,(head_top[0]+40,head_top[1]-int(len_top*(2/3))),(int(len_top*0.2),int(len_top*0.35)),angle_top+10,0,360,(255,0,0),-1)
-        cv2.ellipse(img,(head_top[0]+70,head_top[1]-int(len_top*(2/3))),(int(len_top*0.2),int(len_top*0.35)),angle_top+15,0,360,(255,0,0),-1)
+        cv2.ellipse(img,(head_top[0]+40,head_top[1]-int(len_top*(2/3))),(int(len_top*0.25),int(len_top*0.35)),angle_top+10,0,220,(255,255,0),-1)
+
 
 
 
 
         cv2.circle(img,eye,12,(0,0,0),cv2.FILLED)
+
         cv2.circle(img,eye,6,(255,255,255),cv2.FILLED)
         # print(len_bottom)
         #cv2.circle(img,top_center,50,(255,0,0),-1)
