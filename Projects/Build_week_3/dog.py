@@ -40,7 +40,7 @@ while True:
         len_bottom=int(math.hypot(x4 - x0,y4 - y0)*0.6)
         len_top=int(math.hypot(x8 - x0,y8 - y0)*0.65)
         eye=top_center[0],top_center[1]-30
-
+        head_top=top_centertop_center[0],top_center[1]-50
         #print(angle_top,angle_bottom)
         # cv2.circle(img,bottum_center,12,(255,0,0),cv2.FILLED)
         # cv2.circle(img,top_center,12,(255,0,0),cv2.FILLED)
@@ -52,6 +52,8 @@ while True:
         # else:
         cv2.ellipse(img,bottum_center,(len_bottom,int(len_bottom*0.6)),angle_bottom,0,180,(255,255,0),-1)
         cv2.ellipse(img,top_center,(len_top,int(len_top*0.35)),angle_top,0,360,(255,255,0),-1)
+        cv2.ellipse(img,top_center,(int(len_top*(2/3)),int(len_top*0.6)),angle_top-10,0,180,(255,255,0),-1)
+        v2.ellipse(img,top_center,(len_top,int(len_top*0.35)),angle_top,0,360,(255,255,0),-1)
         cv2.circle(img,eye,12,(0,0,0),cv2.FILLED)
         # print(len_bottom)
         #cv2.circle(img,top_center,50,(255,0,0),-1)
