@@ -67,18 +67,18 @@ while True:
 
         #
         #
-        # tail_center=x0+int(len_bottom*0.75),y0
+        tail_center=x0+int(len_bottom*0.75),y0
+
+
+        cv2.ellipse(img,(fish_center[0],fish_center[1]+10),(int(len_top*1.35),int(len_top*0.6)),angle_top+5,0,360,fish_color,-1)
+        cv2.ellipse(img,tail_center,(int(len_top*0.25),int(len_top*0.65)),angle_top+60,0,360,fish_color,-1)
+        cv2.ellipse(img,tail_center,(int(len_top*0.25),int(len_top*0.65)),angle_top-60,0,360,fish_color,-1)
+
+        cv2.circle(img,fish_eye,12,(0,0,0),cv2.FILLED)
+        cv2.circle(img,fish_eye,6,(255,255,255),cv2.FILLED)
         #
-        #
-        # cv2.ellipse(img,fish_center,(int(len_top*1.35),int(len_top*0.6)),angle_top+5,0,360,fish_color,-1)
-        # cv2.ellipse(img,tail_center,(int(len_top*0.25),int(len_top*0.65)),angle_top+60,0,360,fish_color,-1)
-        # cv2.ellipse(img,tail_center,(int(len_top*0.25),int(len_top*0.65)),angle_top-60,0,360,fish_color,-1)
-        #
-        # cv2.circle(img,fish_eye,12,(0,0,0),cv2.FILLED)
-        # cv2.circle(img,fish_eye,6,(255,255,255),cv2.FILLED)
-        # #
-        #
-        # cv2.line(img,(list[4][1]-30,list[4][2]),(list[0][1],list[0][2]),(255,255,255),4)
+
+        cv2.line(img,(list[4][1],list[4][2]),(list[3][1],list[3][2]),(255,255,255),4)
 
         # # print (tail_center)
 
