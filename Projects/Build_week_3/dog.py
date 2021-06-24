@@ -41,7 +41,7 @@ while True:
         len_bottom=int(math.hypot(x4 - x0,y4 - y0)*0.6)
         len_top=int(math.hypot(x8 - x0,y8 - y0)*0.65)
         eye=top_center[0],top_center[1]-30
-        head_top=top_center[0]+30,top_center[1]-10
+        head_top=top_center[0]+30,top_center[1]-5
         #print(angle_top,angle_bottom)
         # cv2.circle(img,bottum_center,12,(255,0,0),cv2.FILLED)
         # cv2.circle(img,top_center,12,(255,0,0),cv2.FILLED)
@@ -66,7 +66,7 @@ while True:
         #cv2.circle(img,top_center,50,(255,0,0),-1)
         # cv2.line(img,(x0,y0),(x4-20,y4-20),(255,0,0),3)
         # cv2.line(img,(x0,y0),(x8-20,y8-20),(255,0,0),3)
-        cv2.ellipse(img,fish_center,(int(len_top*1.2),int(len_top*0.5)),angle_top+5,0,360,fish_color,-1)
+        cv2.ellipse(img,fish_center,(int(len_top*1.35),int(len_top*0.6)),angle_top+5,0,360,fish_color,-1)
 
     cTime=time.time()
     fps=1/(cTime-pTime)
