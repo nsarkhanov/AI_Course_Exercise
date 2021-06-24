@@ -57,13 +57,13 @@ while True:
         fish_color=(255,255,0)
         fish_eye=x8,y8-30
         fish_monthlie=list[8][1],list[8][2]
-        cv2.ellipse(img,bottum_center,(len_bottom,int(len_bottom*0.6)),angle_bottom,0,180,dog_head_color,-1)
-        cv2.ellipse(img,top_center,(len_top,int(len_top*0.35)),angle_top,0,360,dog_head_color,-1)
-        cv2.ellipse(img,head_top,(int(len_top*(2/3)),int(len_top*0.6)),angle_top+5,180,360,dog_head_color,-1)
-        cv2.ellipse(img,(head_top[0]+40,head_top[1]-int(len_top*(2/5))),(int(len_top*0.25),int(len_top*0.65)),angle_top,180,360,dog_head_color,-1)
-        #eyes
-        cv2.circle(img,eye,12,(0,0,0),cv2.FILLED)
-        cv2.circle(img,eye,6,(255,255,255),cv2.FILLED)
+        # cv2.ellipse(img,bottum_center,(len_bottom,int(len_bottom*0.6)),angle_bottom,0,180,dog_head_color,-1)
+        # cv2.ellipse(img,top_center,(len_top,int(len_top*0.35)),angle_top,0,360,dog_head_color,-1)
+        # cv2.ellipse(img,head_top,(int(len_top*(2/3)),int(len_top*0.6)),angle_top+5,180,360,dog_head_color,-1)
+        # cv2.ellipse(img,(head_top[0]+40,head_top[1]-int(len_top*(2/5))),(int(len_top*0.25),int(len_top*0.65)),angle_top,180,360,dog_head_color,-1)
+        # #eyes
+        # cv2.circle(img,eye,12,(0,0,0),cv2.FILLED)
+        # cv2.circle(img,eye,6,(255,255,255),cv2.FILLED)
 
         #
         #
@@ -78,7 +78,7 @@ while True:
         cv2.circle(img,fish_eye,6,(255,255,255),cv2.FILLED)
         #
 
-        cv2.line(img,(list[4][1],list[4][2]),(list[3][1],list[3][2]),(255,255,255),4)
+        cv2.line(img,(list[4][1]-50,list[4][2]-50),(list[2][1]-30,list[2][2]-30),(255,255,255),4)
 
         # # print (tail_center)
 
