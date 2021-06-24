@@ -49,7 +49,7 @@ while True:
         #     cv2.ellipse(img,top_center,(len_top,int(len_top*0.35)),angle_top,170,350,(255,255,0),-1)
         #
         # else:
-        cv2.ellipse(img,bottum_center,(len_bottom,int(len_bottom*0.4)),angle_bottom,0,360,(255,255,0),-1)
+        cv2.ellipse(img,bottum_center,(len_bottom,int(len_bottom*0.4)),angle_bottom,0,180,(255,255,0),-1)
         cv2.ellipse(img,top_center,(len_top,int(len_top*0.25)),angle_top,0,360,(255,255,0),-1)
 
         # print(len_bottom)
