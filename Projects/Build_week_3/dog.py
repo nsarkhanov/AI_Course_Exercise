@@ -55,6 +55,7 @@ while True:
         # creating dog
         dog_head_color=(33,67,101)
         fish_color=(255,255,0)
+        fish_eye=x8,y8-30
         # cv2.ellipse(img,bottum_center,(len_bottom,int(len_bottom*0.6)),angle_bottom,0,180,dog_head_color,-1)
         # cv2.ellipse(img,top_center,(len_top,int(len_top*0.35)),angle_top,0,360,dog_head_color,-1)
         # cv2.ellipse(img,head_top,(int(len_top*(2/3)),int(len_top*0.6)),angle_top+5,180,360,dog_head_color,-1)
@@ -67,6 +68,11 @@ while True:
         # cv2.line(img,(x0,y0),(x4-20,y4-20),(255,0,0),3)
         # cv2.line(img,(x0,y0),(x8-20,y8-20),(255,0,0),3)
         cv2.ellipse(img,fish_center,(int(len_top*1.35),int(len_top*0.6)),angle_top+5,0,360,fish_color,-1)
+        cv2.circle(img,fish_eye,12,(0,0,0),cv2.FILLED)
+        cv2.circle(img,fish_eye,6,(255,255,255),cv2.FILLED)
+
+        tail_center=fish_center[0]+int(len_top*1.35//2),fish_center[1]
+        print (tail_center)
 
     cTime=time.time()
     fps=1/(cTime-pTime)
