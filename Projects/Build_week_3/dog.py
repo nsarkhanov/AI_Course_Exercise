@@ -78,7 +78,7 @@ while True:
         cv2.circle(img,fish_eye,6,(255,255,255),cv2.FILLED)
         #
 
-        cv2.line(img,(list[4][1]-int(list[4][1]*0.1),list[4][2]-int(list[4][2]*0.2)),(list[4][1]+int(list[4][1]*0.1),list[4][2]-int(list[4][2]*0.2)),(255,255,255),4)
+        cv2.line(img,(list[4][1]-int(list[4][1]*0.1),list[4][2]-int(list[4][2]*0.1)),(list[4][1]+int(list[4][1]*0.1),list[4][2]-int(list[4][2]*0.1)),(255,255,255),4)
 
         # # print (tail_center)
 
