@@ -30,7 +30,7 @@ while True:
         # cv2.circle(img,(x17,y17),8,(255,0,0),cv2.FILLED)
         bottum_center=(x0+x4)//2,(y0+y4)//2-20
         top_center=(x0+x8)//2,(y0+y8)//2-20
-        fish_center=(int()(bottum_center[0]+top_center[0])//2)*1.1),(bottum_center[1]+top_center[1])//2
+        fish_center=(bottum_center[0]+top_center[0])//2+20,(bottum_center[1]+top_center[1])//2-5
 
         slope_bottom = (y4 - y0) / (x4 - x0)
         angle_bottom = np.arctan(slope_bottom)*180/np.pi
