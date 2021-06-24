@@ -69,17 +69,15 @@ while True:
         #
         tail_center=fish_center[0]+int(len_top*1.35//2),fish_center[1]
         cv2.ellipse(img,fish_center,(int(len_top*1.35),int(len_top*0.6)),angle_top+5,0,360,fish_color,-1)
-        cv2.ellipse(img,fish_center,(int(len_top*1.35),int(len_top*0.6)),angle_top+5,0,360,fish_color,-1)
-        cv2.ellipse(img,tail_center,(int(len_top*1.35),int(len_top*0.6)),angle_top+5,0,360,fish_color,-1)
-
+        cv2.ellipse(img,tail_center,(int(len_top*0.35),int(len_top*0.6)),angle_top+40,0,360,fish_color,-1)
+        cv2.ellipse(img,tail_center,(int(len_top*0.35),int(len_top*0.6)),angle_top-35,0,360,fish_color,-1)
 
         cv2.circle(img,fish_eye,12,(0,0,0),cv2.FILLED)
         cv2.circle(img,fish_eye,6,(255,255,255),cv2.FILLED)
         #
 
-        cv2.line(img,(list[8][1],list[8][2]),(list[6][1],list[6][2]),(255,255,255),4)
-        cv2.ellipse(img,fish_center,(int(len_top*1.35),int(len_top*0.6)),angle_top+5,0,360,fish_color,-1)
-        cv2.ellipse(img,fish_center,(int(len_top*1.35),int(len_top*0.6)),angle_top+5,0,360,fish_color,-1)
+        cv2.line(img,(list[8][1]-30,list[8][2]),(list[6][1],list[6][2]),(255,255,255),4)
+
         # # print (tail_center)
 
     cTime=time.time()
