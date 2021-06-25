@@ -18,8 +18,8 @@ while True:
     list=detector.findPosition(img,draw=False)
     if len(list)!=0:
         #img=af.draw_dog(list,img)
-        #img=af.draw_angry_dog(list,img)
-        #img=af.draw_rabbit(list,img)
+        # img=af.draw_angry_dog(list,img)
+        # img=af.draw_rabbit(list,img)
         img=af.draw_fish(list,img)
 
     cv2.imshow("Frame",frame)

@@ -2,14 +2,21 @@ import cv2
 import numpy as np
 import math
 
+def limit(number):
+    if number>150:
+        number=number*0.5
+    else:
+        number=number*0.6
+    return number
+
 def change_month(list,mounth_shape):
-    if list[0]-list[1]<180  :
+    if list[0]-list[1]<160  :
         mounth_shape=int(mounth_shape*0.3)
     else:
         mounth_shape=int(mounth_shape)
     return mounth_shape
 def eating(list,color):
-    if list[0]-list[1]<200    :
+    if list[0]-list[1]<160    :
         color=(0,0,255)
     else:
         color=color
@@ -22,7 +29,8 @@ def draw_rabbit(list,img):
     y=[ list[x][2] for x in range(len(list)) ]
     mountion=y[0],y[12]
     cx,cy=int(np.average(x)+np.average(x)*0.02),int(np.average(y)+np.average(y)*0.031)
-    size=int(math.hypot(x[8] - x[0],y[8] - y[0])*0.65)
+    leng=int(math.hypot(x[8] - x[0],y[8] - y[0])*0.65)
+    size=limit(leng)
     head_size=int(size*0.95)
     eye_size=int(head_size*0.2)
     center_coordinate=cx,cy
@@ -33,7 +41,7 @@ def draw_rabbit(list,img):
     mounth_shape=int(size*0.3)
     right_ear_coor=center_coordinate[0]+int(size*0.3),center_coordinate[1]-int(size*1.3)
     left_ear_coor=center_coordinate[0]-int(size*0.4),center_coordinate[1]-int(size*1.3)
-    cv2.circle(img,center_coordinate,size,color_head,cv2.FILLED)
+    cv2.circle(img,center_coordinate,int(size),color_head,cv2.FILLED)
     cv2.circle(img,right_eye_coor,eye_size,color_out,cv2.FILLED)
     cv2.circle(img,right_eye_coor,int(eye_size*0.8),color_inside,cv2.FILLED)
     cv2.circle(img,right_eye_coor,int(eye_size*0.3),color_out,cv2.FILLED)
@@ -54,9 +62,11 @@ def draw_dog(list,img):
     color_eye_inside=(255,255,255)
     x=[ list[x][1] for x in range(len(list)) ]
     y=[ list[x][2] for x in range(len(list)) ]
+
     mountion=y[0],y[12]
     cx,cy=int(np.average(x)+np.average(x)*0.02),int(np.average(y)+np.average(y)*0.031)
-    size=int(math.hypot(x[8] - x[0],y[8] - y[0])*0.65)
+    leng=int(math.hypot(x[8] - x[0],y[8] - y[0])*0.65)
+    size=limit(leng)
     head_size=int(size*0.95)
     eye_size=int(head_size*0.2)
     center_coordinate=cx,cy
@@ -84,7 +94,7 @@ def draw_dog(list,img):
     cv2.line(img,noise_center,(noise_center[0]-int(head_size*0.3),noise_center[1]+int(head_size*0.1)),color_out,2)
     cv2.circle(img,noise_center,int(eye_size*0.3),color_inside,cv2.FILLED)
     cv2.ellipse(img,mounth_center,(change_month(mountion,mounth_shape),int(change_month(mountion,mounth_shape)*0.6)),0,0,180,color_out,-1)
-    cv2.ellipse(img,mounth_center,(change_month(mountion,mounth_shape),int(change_month(mountion,mounth_shape)*0.5)),0,0,180,eating(mountion,color_inside),-1)
+    cv2.ellipse(img,mounth_center,(int(change_month(mountion,mounth_shape)*1.1),int(change_month(mountion,mounth_shape)*0.7)),0,0,180,eating(mountion,color_inside),-1)
 
     return img
 def draw_fish(list,img):
@@ -97,7 +107,8 @@ def draw_fish(list,img):
     y=[ list[x][2] for x in range(len(list)) ]
     mountion=y[0],y[12]
     cx,cy=int(np.average(x)+np.average(x)*0.02),int(np.average(y)+np.average(y)*0.031)
-    size=int(math.hypot(x[8] - x[0],y[8] - y[0])*0.65)
+    leng=int(math.hypot(x[8] - x[0],y[8] - y[0])*0.65)
+    size=limit(leng)
     head_size=int(size*0.95)
     eye_size=int(head_size*0.2)
     center_coordinate=cx,cy
@@ -129,7 +140,8 @@ def draw_angry_dog(list,img):
     y=[ list[x][2] for x in range(len(list)) ]
     mountion=y[0],y[12]
     cx,cy=int(np.average(x)+np.average(x)*0.02),int(np.average(y)+np.average(y)*0.031)
-    size=int(math.hypot(x[8] - x[0],y[8] - y[0])*0.65)
+    leng=int(math.hypot(x[8] - x[0],y[8] - y[0])*0.65)
+    size=limit(leng)
     head_size=int(size*0.95)
     eye_size=int(head_size*0.2)
     center_coordinate=cx,cy
