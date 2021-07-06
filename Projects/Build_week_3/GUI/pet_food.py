@@ -18,7 +18,6 @@ class Pet_food(metaclass = IterRegistry):
     GREEN = (63, 140, 58)
     BRIGHT_GREEN = (0, 255, 0)
     BLACK = (0, 0, 0)
-    RED = (0, 0, 255)
 
     # Other useful staff
     FONT = cv2.QT_FONT_NORMAL
@@ -77,14 +76,14 @@ class Pet_food(metaclass = IterRegistry):
             img = cv2.circle(img, (x + 10, y - 23), 2, Pet_food.BLACK, -1)
             img = cv2.circle(img, (x + 16, y - 23), 2, Pet_food.BLACK, -1)
             img = cv2.ellipse(img, (x + 13, y - 16), (4,4), 0, 180, 0, Pet_food.BLACK, 2)
-
+            
         else:
             img = cv2.rectangle(image, (self.position[1] - self.dimension, self.position[0] - self.dimension),
             (self.position[1] + self.dimension, self.position[0] + self.dimension),
             self.color, -1)
-
+        
         return img
-
+    
     # updates item's position (linear movement)
     def move_food(self):
         pos = list(self.position)
@@ -112,9 +111,9 @@ class Pet_food(metaclass = IterRegistry):
             self.speed = -self.speed
             self.m = -self.m
             self.b = pos[0] - self.m * pos[1]
-
+        
         self.position = tuple(pos)
-
+    
     # detects hand collision
     def hand_collision(self, hand_center: tuple):
         collision_radius = 30
