@@ -4,5 +4,8 @@
   box-sizing: border-box;
 }
 
-
-nav 
+.nav-links {
+  text-align: right;
+  margin-top: 10px;
+  text-decoration: aqua;
+}
